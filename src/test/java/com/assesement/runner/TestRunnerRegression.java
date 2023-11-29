@@ -4,10 +4,7 @@ import com.assesement.factory.DriverFactory;
 import com.assesement.utils.Utility;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.SearchContext;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -39,14 +36,9 @@ public class TestRunnerRegression extends AbstractTestNGCucumberTests {
     }
 
     public void acceptCookies() throws InterruptedException {
-        WebElement root = driver.findElement(By.id("usercentrics-root"));
-        SearchContext shadowDom = root.getShadowRoot();
-        try {
-            shadowDom.findElement(By.cssSelector("div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)")).click();
-        }
-        catch (Exception e)
-        {
-            System.out.println("cookie has been accepted");
-        }
+        WebElement shadowHost = driver.findElement(By.id("usercentrics-root"));
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        SearchContext shadowRoot = (SearchContext) javascriptExecutor.executeScript("return arguments[0].shadowRoot", shadowHost);
+        shadowRoot.findElement(By.cssSelector("div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(3)")).click();
     }
 }

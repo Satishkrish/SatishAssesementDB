@@ -1,13 +1,13 @@
 Feature: Test all the important Scenarios of Careers Page
 
 
-  @SmokeTest
-  Scenario: Check the Language Switch Button
+  @RegressionTest
+  Scenario: Check the Navigation menu Contains all the elements
 
     Given User is on careers HomePage
     Then user Verifies the Navigation Contains "Inside Deutsche Bank,Our Business,Our people,Professionals,Students and Graduates,School leavers Germany,School leavers UK"
 
-  @SmokeTest
+  @RegressionTest @SmokeTest @SanityTest
   Scenario: Check the Language Switch Button
 
     Given User is on careers HomePage
@@ -17,7 +17,7 @@ Feature: Test all the important Scenarios of Careers Page
     Then User is back on English language
 
 
-  @SmokeTest
+  @RegressionTest
   Scenario: Verify the Contact Page from Careers
 
     Given User is on careers HomePage
@@ -25,7 +25,7 @@ Feature: Test all the important Scenarios of Careers Page
     And User Verifies the phone number is "+49 30 6676 - 9010"
     Then User goes back to career page
 
-  @SmokeTest
+  @RegressionTest @SanityTest
   Scenario: Verify more button is working Inside Deutsche Bank Section
 
     Given User is on careers HomePage
@@ -34,7 +34,7 @@ Feature: Test all the important Scenarios of Careers Page
     Then User goes back to career page
 
 
-  @SmokeTest
+  @RegressionTest @SanityTest
   Scenario: Verify Search is working under Life at DB
 
     Given User is on careers HomePage
@@ -43,7 +43,7 @@ Feature: Test all the important Scenarios of Careers Page
     And user is able to navigate to the article and verifies the title "Lakshmi – Deutsche Bank Careers"
     Then User goes back to career page
 
-  @SmokeTest
+  @RegressionTest @SanityTest
   Scenario: Verify Next and Previous Button is working in carousel
 
     Given User is on careers HomePage
@@ -53,22 +53,22 @@ Feature: Test all the important Scenarios of Careers Page
     And Verify the First Carousel Shows the  article contains "Explore how we"
 
 
-  @SmokeTest
+  @RegressionTest
   Scenario: Verify Load More is Working
 
     Given User is on careers HomePage
     When user Click on Load More
     Then Verify the Article Containing "Nikolaus" is displayed
 
-  @SmokeTest
-  Scenario: Verify what you are looking for is working
+  @RegressionTest @SmokeTest
+  Scenario: Verify Search, What you are looking for is working
 
     Given User is on careers HomePage
     When user Clicks Search from ToolBox
     And Enter Search Input and clicks on Search
     Then New tab with search result is opened ,Verify the Title and switch to parent
 
-  @SmokeTest
+  @RegressionTest
   Scenario: Verify the Copyright Footer of the page
 
     Given User is on careers HomePage
