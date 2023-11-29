@@ -1,6 +1,6 @@
 # Selenium Cucumber Test Automation Framework
 
-This is a test automation framework for automated testing of Jupiter Toys website using Selenium, Cucumber, and TestNG.
+This is a test automation framework for automated testing Created for Assesment  using Selenium, Cucumber, and TestNG.
 
 ## Table of Contents
 - [Features](#features)
